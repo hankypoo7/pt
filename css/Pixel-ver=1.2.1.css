@@ -1,0 +1,266 @@
+#currency {
+	width: 980px;
+	height: 46px;
+	margin: 10px 0px;
+	font-size: 46px;
+	line-height: 46px;
+}
+#pixels, #pps {
+	font-family: 'Press Start 2P', sans !important;
+	float: left;
+	font-size: 40px;
+	padding-right: 14px;
+}
+#gameContainer {
+	position: relative;
+    display: inline-block;
+	border: 1px solid black;
+	margin: 0px auto 30px auto;
+}
+#overlayDiv {
+	 height: 100%;
+	 width: 100%;
+	 position: relative;
+	 z-index: 2;
+}
+#picture {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+	background: url("../images/blue.png");
+	background-size: contain;
+}
+.gameButton {
+	color: #222;
+	border: 1px solid #AAA;
+	border-radius: 4px;
+	position: relative;
+	width: 180px;
+	height: 30px;
+	margin-bottom: 4px;
+	-moz-user-select: none;
+	-khtml-user-select: none; 
+	-webkit-user-select: none; 
+	-o-user-select: none;
+	cursor: pointer;
+	font-size: 10pt;
+	font-weight: bold;
+	text-shadow: 1px 1px 0 #fff;
+	text-align: center;
+	line-height: 30px;
+	
+	background: #CCC; /* Old browsers */
+	background: -moz-linear-gradient(top, #DDD 0%, #CCC 100%); /* FF3.6+ */
+	background: -o-linear-gradient(top, #DDD 0%,#CCC 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #DDD 0%,#CCC 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #DDD 0%,#CCC 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DDD', endColorstr='#CCC',GradientType=0 ); /* IE6-9 */
+}
+.disabled {
+	opacity: 0.5;
+}
+.infoHeader {
+	font-size: 1.3em;
+	font-weight: bold;
+	text-decoration: underline;
+}
+#rightCol {
+	width: 380px;
+	height: 800px;
+	float: right;
+}
+.headerButtons {
+	width: 380px;
+	height: 30px;
+}
+#info {
+	width: 350px;
+	border: 1px solid black;
+	padding: 10px;
+	float: left;
+	height: 430px;
+	overflow-y: scroll;
+	margin-top: 2px;
+	margin-bottom: 20px;
+}
+#breakingNews {
+	width: 350px;
+	height: 170px;
+	border: 1px solid black;
+	float: left;
+	padding: 10px;
+	overflow-y: scroll;
+}
+.headerButton {
+	color: black;
+	cursor: pointer;
+	float: left;
+	min-width: 75px;
+	border: 1px solid #ccc;
+	margin-right: 4px;
+	text-align: center;
+	padding: 2px 4px;
+	border-radius: 4px;
+	
+	-moz-user-select: none; 
+	-khtml-user-select: none; 
+	-webkit-user-select: none; 
+	-o-user-select: none;
+	
+	background: #feffe8; /* Old browsers */
+	background: -moz-linear-gradient(top, #feffe8 0%, #d6dbbf 100%); /* FF3.6+ */
+	background: -o-linear-gradient(top, #feffe8 0%,#d6dbbf 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #feffe8 0%,#d6dbbf 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #feffe8 0%,#d6dbbf 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8', endColorstr='#d6dbbf',GradientType=0 ); /* IE6-9 */
+}
+#toaster {
+	position: fixed;
+	width: 250px;
+	left: 50%;
+	bottom: 5px;
+	margin-left: -128px;
+	z-index: 4;
+}
+.toastDiv {
+	width: 250px;
+	border: 3px solid black;
+	padding: 3px;
+	margin-bottom: 5px;
+	background-color: #DDD;
+}
+.toastHeader {
+	line-height: 1.5em;
+	text-align: center; 
+	font-weight: bold;
+}
+.toastChievo {
+	text-decoration: underline;
+}
+.toastDesc {
+	font-size: 0.8em; 
+	color: #090;
+}
+#popUpDiv {
+	color: black;
+	display: none;
+	position: absolute;
+	left: 100px;
+	top: 50px;
+	border: 1px solid black;
+	padding: 10px;
+	background-color: #AAA;
+	text-align: justify;
+	font-size: 12px;
+	width: 160px;
+	z-index: 100;
+}
+.statName {
+	font-weight: bold;
+	text-decoration: underline;
+}
+#version {
+	display: none;
+	border: 1px solid black;
+	position: fixed;
+	bottom: 5px;
+	left: 5px;
+	height: 40px;
+	color: black;
+	z-index: 101;
+	padding: 5px;
+	background-color: white;
+	box-shadow: 3px 3px 3px #888888;
+}
+#nextImage {
+	display: none;
+	cursor: pointer;
+	border: 1px solid #888;
+	margin-bottom: 3px;
+	
+	background: #ECABB1; /* Old browsers */
+	background: -moz-linear-gradient(top, #ECABB1 0%, #FF5757 100%); /* FF3.6+ */
+	background: -o-linear-gradient(top, #ECABB1 0%,#FF5757 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ECABB1 0%,#FF5757 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ECABB1 0%,#FF5757 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ECABB1', endColorstr='#FF5757',GradientType=0 ); /* IE6-9 */
+}
+#bomb {
+	display: none;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 100;
+	background-color: #ED978A;
+	color: #FF0000;
+	border: 1px solid black;
+	padding: 4px;
+}
+#toaster {
+	position: fixed;
+	width: 250px;
+	left: 50%;
+	bottom: 5px;
+	margin-left: -128px;
+	z-index: 4;
+}
+.toastDiv {
+	width: 250px;
+	background-color: #1B1B1B;
+	border: 3px solid blue;
+	padding: 3px;
+	margin-bottom: 5px;
+}
+.toastHeader {
+	line-height: 1.5em;
+	text-align: center; 
+	font-weight: bold;
+	color: #39F;
+}
+.toastChievo {
+	text-decoration: underline;
+	color: skyblue;
+}
+.toastDesc {
+	font-size: 0.8em; 
+	color: #CCC;
+}
+.chievo {
+	width: 98%;
+	min-height: 14px;
+	padding: 8px 4px;
+	float: left;
+	margin: 3px;
+	border: 2px solid #777;
+	background-size: contain;
+	opacity: 0.5;
+	background-color: #333;
+	color: #999;
+}
+.hiddenChievo {
+}
+.achieved {
+	opacity: 1.0;
+	color: #FFF;
+	background-color: #111;
+	border: 2px solid blue;
+}
+.chievoName {
+	font-weight: bold;
+	color: skyblue;
+}
+#partyPixel {
+    height: 50px;
+    width: 50px;
+    background-color: #F020F0;
+    z-index: 5;
+    position: fixed;
+    top: -100px;
+    left: -100px;
+}
+.searchBox {
+    float: left;
+    width: 160px;
+    margin-right: 6px;
+}
