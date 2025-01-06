@@ -1,0 +1,63 @@
+Pixel This Change Log
+
+10/24/14 - v1.2.1
+Fixed an issue with most subreddits not working. The issue seemed to be rooted in the fact that not all subreddits
+support sorting by "top", but all that I've tested seem to support sorting by time, so I switched to that.
+
+10/24/14 - v1.2.0
+Bombs got a huge boost and as a result had the reload time boost granted by an upgrade quartered
+Added a prompt on a new session about the party pixel flashing, option is still in the menu
+Added new upgrades for party pixel
+Popping a party pixel now gives bonus pixels, purely based on your bank with no cap
+Added a search term box which lets you specify either search terms or a subreddit
+- Subreddits must be in the form of /r/subreddit
+- Search terms can follow the q value rules at https://api.imgur.com/endpoints/gallery#gallery-search
+- So you can put "kitties ext: gif" in the search box (without the quotes) and get only kitty gifs. :-)
+- I have not had good luck using the boolean operators, but they should work in theory (e.g. "kitties OR puppies ext: gif")
+- If you have exhausted 10 pages of results (600 images) based on the filters, it will drop you back to random gallery
+- For example, if you go to a certain subreddit where girls are wild, without NSFW toggled, there is a very high chance you'll just wind up back in random
+Added a NSFW Toggle box. If this is toggled, it means NSFW images are allowed. It DOES NOT mean only NSFW images will show up
+
+9/16/14 - v1.1.4
+Added night mode option (in menu tab)
+Added option to stop flashing during party (in menu tab)
+Added Hard Reset button (in menu tab)
+Added Bomb timer (thanks http://www.reddit.com/user/Ballpit_Inspector)
+Reduced time before auto next image triggers from 5 min to 30 sec
+Fixed a bug causing massive lag if part of a large manual cursor was touching "above" the image\
+Fixed the same image showing up multiple times
+Added some more stats
+
+9/16/14 - v1.1.3
+Added version identifier in menu
+Fixed stupid achievement bug which killed next image button sometimes
+
+9/15/14 - v1.1.2
+Fixed history bugs
+
+9/15/14 - v1.1.1
+Added option for number formatting
+Fixed/moved lag in Opera
+
+9/15/14 - v1.1.0
+Initial Live Release
+Greatly improved starting speed
+Moved some necessary upgrades out from under info/stat upgrades
+Reduced the price on some upgrades
+Added Pixel Splitters
+
+9/13/14 - v1.0.4
+Hopefully fixed bug with loading saved image
+
+9/12/14 - v1.0.3
+Fixed a bug with missing a party pixel
+Rearranged the achievements so hopefully it's less consuming
+
+9/11/14 - v1.0.2
+Fixed a bug with tracking bombs
+
+9/11/14 - v1.0.1
+Fixed a missing feature to the PaRtY PiXeL
+
+9/11/14 - v1.0.0
+Internal Release
