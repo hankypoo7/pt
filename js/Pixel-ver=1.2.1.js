@@ -1,3 +1,4 @@
+// Translated File - All Chinese content replaced with English
 //---------------------------
 // Game
 //---------------------------
@@ -5,144 +6,148 @@ Pixel = {};
 Pixel.State = {};
 
 function hrformat(number) {
-	if(Pixel.State.shortFormats) {
-		number = number < 1 && number > 0 ? 1 : number;
-		var s = ['', 'k', 'M', 'B', 'T', 'Qa', 'Qi', 'Sx', 'Sp', 'Oc', 'No', 'Dc'];
-		var e = Math.floor(Math.log(number) / Math.log(1000));
-		return number < 1000 ? Math.floor(number) : ((number / Math.pow(1000, e)).toFixed(2) + s[e]);
-	} else {
-		return Math.floor(number);
-	}
+    if (Pixel.State.shortFormats) {
+        number = number < 1 && number > 0 ? 1 : number;
+        var s = ['', 'k', 'M', 'B', 'T', 'Qa', 'Qi', 'Sx', 'Sp', 'Oc', 'No', 'Dc'];
+        var e = Math.floor(Math.log(number) / Math.log(1000));
+        return number < 1000 ? Math.floor(number) : ((number / Math.pow(1000, e)).toFixed(2) + s[e]);
+    } else {
+        return Math.floor(number);
+    }
 }
 
-Pixel.Init = function() {
-	Pixel.initialized = 0;
-	Pixel.Start = function() {
-		//---------------------------
-		//Check for browser compat
-		//---------------------------
-		if(typeof(Storage)!=="undefined") {
-			//---------------------------
-			//Constants
-			//---------------------------
-			Pixel.version = 'v1.2.1';
-			Pixel.initialized = 1;
-			Pixel.fps = 120;
-			Pixel.saveEvery = 300; //Save every 5 min
-			Pixel.maxWidth = 600;
-			Pixel.maxHeight = 800;
-			Pixel.baseAutoCursorSpeed = 1;
-			Pixel.baseAutoCursorUpgradeSpeed = 1;
-			Pixel.baseBombReloadSpeed = 36;
-			Pixel.autoFinishTime = 30; //Let auto finish trigger after 30s
-			Pixel.tabRefreshTime = 1;
-			Pixel.baseTimeToParty = 600; //Party Pixel every 10 min
-			Pixel.basePartyTime = 15; //Parties last 15s
-			Pixel.basePartyRefresh = 0.5;
-			Pixel.colors = ['Magenta', 'Aqua', 'Bisque', 'BlueViolet', 'Chartreuse', 'DarkGreen', 
-							'DeepPink', 'GreenYellow', 'LightCoral', 'Maroon', 'MidnightBlue', 
-							'OrangeRed', 'Red', 'Yellow', 'WhiteSmoke', 'SandyBrown', 'Salmon', 'RoyalBlue'];
-			
-			//---------------------------
-			//Non-saved vars
-			//---------------------------
-			Pixel.timeToSave = 0;
-			Pixel.timeToCursor = 0;
-			Pixel.timeToPartyCursor = 0;
-			Pixel.timeToBomb = 0;
-			Pixel.timeToAutoFinish = 0;
-			Pixel.timeToTabRefresh = 0;
-			Pixel.timeToParty = 0;
-			Pixel.timeToPartyRefresh = 0;
-			Pixel.partyTimeLeft = 0;
-			Pixel.newsId = 0;
-			Pixel.delay = 0;
-			Pixel.imageWidth = Pixel.maxWidth;
-			Pixel.imageHeight = Pixel.maxHeight;
-			Pixel.time = new Date().getTime();
-			Pixel.pictureComplete = false;
-			Pixel.lastNews = 0;
-			Pixel.news = Array();
-			Pixel.gameButtonListeners = Array();
-			Pixel.gameButtonOverListeners = Array();
-			Pixel.overlayImageData = null;
-			Pixel.nextImageButtonListener = null;
-			Pixel.bombChain = 0;
-			Pixel.partyTime = false;
-			Pixel.imageLink = "";
-			Pixel.partyOverlay = null;
-			
-			//---------------------------
-			//State Variables that will be saved
-			//---------------------------
-			Pixel.State.firstPlay = Pixel.time;
-			Pixel.State.numPixels = 0;
-			Pixel.State.pixelsThisImage = 0;
-			Pixel.State.manualBombsThisImage = 0;
-			Pixel.State.lastRandX = 0;
-			Pixel.State.lastRandY = 0;
-			Pixel.State.image = undefined;
-			Pixel.State.overlay = null;
-			Pixel.State.cursorSizeLvl = 1;
-			Pixel.State.autoCursorSpeedLvl = 0;
-			Pixel.State.cursorBombSizeLvl = 0;
-			Pixel.State.cursorBombSpeedLvl = 0;
-			Pixel.State.cursorBombChainLvl = 0;
-			Pixel.State.cursorBombMaxChainLvl = 1;
-			Pixel.State.color = 0;
-			Pixel.State.partyPixelPopLvl = 1;
-			Pixel.State.autoNextImage = false;
-			Pixel.State.nsfwToggle = false;
-			Pixel.State.searchTerm = "";
-			Pixel.State.bombReady = false;
-			Pixel.State.shortFormats = true;
-			Pixel.State.nightMode = false;
-			Pixel.State.flashingParty = true;
-			Pixel.State.history = Array();
-			Pixel.State.achievements = new Achievements();
-			Pixel.State.upgrades = new Upgrades();
-			
-			//---------------------------
-			//State Variables that will be saved
-			//---------------------------
-			Pixel.State.stats = {};
-			Pixel.State.stats.timePlayed = 0;
-			Pixel.State.stats.timePlayedPicture = 0;
-			Pixel.State.stats.bestPictureTime = 999999999;
-			Pixel.State.stats.worstPictureTime = 0;
-			Pixel.State.stats.picturesCompleted = 0;
-			Pixel.State.stats.picturesSkipped = 0;
-			Pixel.State.stats.pixelsAllTime = 0;
-			Pixel.State.stats.pixelsManuallyCollected = 0;
-			Pixel.State.stats.pixelsAutoCollected = 0;
-			Pixel.State.stats.pixelsBombCollected = 0;
-			Pixel.State.stats.maxBombChain = 0;
-			Pixel.State.stats.manualPixelsThisImage = 0;
-			Pixel.State.stats.bombsLaunched = 0;
-			Pixel.State.stats.alreadyUncovered = 0;
-			Pixel.State.stats.partiesHad = 0;
-			Pixel.State.stats.partiesMissed = 0;
-			Pixel.State.stats.partyPopPixels = 0;
-			
-			Pixel.news.push("默认情况下禁用NSFW图像，但仍未显示未标记的图像。 使用风险由您自己承担");
-			Pixel.news.push(" ");
-			Pixel.news.push("由于触发器的性质，任何PPS增加超过120pps都不会生效。 很快就会修复™");
-			Pixel.news.push("点击这里查看 <a href='changelog.txt' target='_blank'>更新日志</a>");
-			
-			//Create the random party pixel overlay - we should only ever do this once as it sucks
-			if(Pixel.partyOverlay === null) {
-				Pixel.partyOverlay = Array();
-				for(var ndx = 0; ndx < Pixel.maxHeight*Pixel.maxWidth*4; ndx++) {
-					if(ndx%4 !== 3) {
-						Pixel.partyOverlay[ndx++] = Math.floor(Math.random()*256);
-						Pixel.partyOverlay[ndx++] = Math.floor(Math.random()*256);
-						Pixel.partyOverlay[ndx] = Math.floor(Math.random()*256);
-					}
-				}
-			}
-			
-			//Load the existing state if one exists
-			Pixel.LoadGame();
+Pixel.Init = function () {
+    Pixel.initialized = 0;
+    Pixel.Start = function () {
+        //---------------------------
+        // Check for browser compatibility
+        //---------------------------
+        if (typeof (Storage) !== "undefined") {
+            //---------------------------
+            // Constants
+            //---------------------------
+            Pixel.version = 'v1.2.1';
+            Pixel.initialized = 1;
+            Pixel.fps = 120;
+            Pixel.saveEvery = 300; // Save every 5 minutes
+            Pixel.maxWidth = 600;
+            Pixel.maxHeight = 800;
+            Pixel.baseAutoCursorSpeed = 1;
+            Pixel.baseAutoCursorUpgradeSpeed = 1;
+            Pixel.baseBombReloadSpeed = 36;
+            Pixel.autoFinishTime = 30; // Let auto finish trigger after 30s
+            Pixel.tabRefreshTime = 1;
+            Pixel.baseTimeToParty = 600; // Party Pixel every 10 min
+            Pixel.basePartyTime = 15; // Parties last 15s
+            Pixel.basePartyRefresh = 0.5;
+            Pixel.colors = ['Magenta', 'Aqua', 'Bisque', 'BlueViolet', 'Chartreuse', 'DarkGreen',
+                'DeepPink', 'GreenYellow', 'LightCoral', 'Maroon', 'MidnightBlue',
+                'OrangeRed', 'Red', 'Yellow', 'WhiteSmoke', 'SandyBrown', 'Salmon', 'RoyalBlue'];
+
+            //---------------------------
+            // Non-saved variables
+            //---------------------------
+            Pixel.timeToSave = 0;
+            Pixel.timeToCursor = 0;
+            Pixel.timeToPartyCursor = 0;
+            Pixel.timeToBomb = 0;
+            Pixel.timeToAutoFinish = 0;
+            Pixel.timeToTabRefresh = 0;
+            Pixel.timeToParty = 0;
+            Pixel.timeToPartyRefresh = 0;
+            Pixel.partyTimeLeft = 0;
+            Pixel.newsId = 0;
+            Pixel.delay = 0;
+            Pixel.imageWidth = Pixel.maxWidth;
+            Pixel.imageHeight = Pixel.maxHeight;
+            Pixel.time = new Date().getTime();
+            Pixel.pictureComplete = false;
+            Pixel.lastNews = 0;
+            Pixel.news = Array();
+            Pixel.gameButtonListeners = Array();
+            Pixel.gameButtonOverListeners = Array();
+            Pixel.overlayImageData = null;
+            Pixel.nextImageButtonListener = null;
+            Pixel.bombChain = 0;
+            Pixel.partyTime = false;
+            Pixel.imageLink = "";
+            Pixel.partyOverlay = null;
+
+            //---------------------------
+            // State Variables to be saved
+            //---------------------------
+            Pixel.State.firstPlay = Pixel.time;
+            Pixel.State.numPixels = 0;
+            Pixel.State.pixelsThisImage = 0;
+            Pixel.State.manualBombsThisImage = 0;
+            Pixel.State.lastRandX = 0;
+            Pixel.State.lastRandY = 0;
+            Pixel.State.image = undefined;
+            Pixel.State.overlay = null;
+            Pixel.State.cursorSizeLvl = 1;
+            Pixel.State.autoCursorSpeedLvl = 0;
+            Pixel.State.cursorBombSizeLvl = 0;
+            Pixel.State.cursorBombSpeedLvl = 0;
+            Pixel.State.cursorBombChainLvl = 0;
+            Pixel.State.cursorBombMaxChainLvl = 1;
+            Pixel.State.color = 0;
+            Pixel.State.partyPixelPopLvl = 1;
+            Pixel.State.autoNextImage = false;
+            Pixel.State.nsfwToggle = false;
+            Pixel.State.searchTerm = "";
+            Pixel.State.bombReady = false;
+            Pixel.State.shortFormats = true;
+            Pixel.State.nightMode = false;
+            Pixel.State.flashingParty = true;
+            Pixel.State.history = Array();
+            Pixel.State.achievements = new Achievements();
+            Pixel.State.upgrades = new Upgrades();
+
+            //---------------------------
+            // Statistics
+            //---------------------------
+            Pixel.State.stats = {};
+            Pixel.State.stats.timePlayed = 0;
+            Pixel.State.stats.timePlayedPicture = 0;
+            Pixel.State.stats.bestPictureTime = 999999999;
+            Pixel.State.stats.worstPictureTime = 0;
+            Pixel.State.stats.picturesCompleted = 0;
+            Pixel.State.stats.picturesSkipped = 0;
+            Pixel.State.stats.pixelsAllTime = 0;
+            Pixel.State.stats.pixelsManuallyCollected = 0;
+            Pixel.State.stats.pixelsAutoCollected = 0;
+            Pixel.State.stats.pixelsBombCollected = 0;
+            Pixel.State.stats.maxBombChain = 0;
+            Pixel.State.stats.manualPixelsThisImage = 0;
+            Pixel.State.stats.bombsLaunched = 0;
+            Pixel.State.stats.alreadyUncovered = 0;
+            Pixel.State.stats.partiesHad = 0;
+            Pixel.State.stats.partiesMissed = 0;
+            Pixel.State.stats.partyPopPixels = 0;
+
+            Pixel.news.push("By default, NSFW images are disabled, but unmarked images may still appear. Use at your own risk.");
+            Pixel.news.push(" ");
+            Pixel.news.push("Due to the nature of triggers, any PPS increase above 120pps will not take effect. A fix is coming soon™.");
+            Pixel.news.push("Click here to view the <a href='changelog.txt' target='_blank'>changelog</a>");
+
+            //---------------------------
+            // Setup Random Overlay
+            //---------------------------
+            if (Pixel.partyOverlay === null) {
+                Pixel.partyOverlay = Array();
+                for (var ndx = 0; ndx < Pixel.maxHeight * Pixel.maxWidth * 4; ndx++) {
+                    if (ndx % 4 !== 3) {
+                        Pixel.partyOverlay[ndx++] = Math.floor(Math.random() * 256);
+                        Pixel.partyOverlay[ndx++] = Math.floor(Math.random() * 256);
+                        Pixel.partyOverlay[ndx] = Math.floor(Math.random() * 256);
+                    }
+                }
+            }
+
+            //---------------------------
+            // Load existing state
+            //---------------------------
+            Pixel.LoadGame();
 			
 			//Setup
 			var index = 0;
