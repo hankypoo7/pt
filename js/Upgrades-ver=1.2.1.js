@@ -2,8 +2,8 @@ function Upgrades() {
 	this.upgrades = Array();
 	this.upgrades[0] = {
 		id: 0,
-		name: "像素显示",
-		desc: "显示您辛苦得到的像素",
+		name: "Pixel display",
+		desc: "Show your hard-earned pixels",
 		cost: 500,
 		persist: false,
 		prereq: -1,
@@ -11,8 +11,8 @@ function Upgrades() {
 	};
 	this.upgrades[1] = {
 		id: 1,
-		name: "自动光标",
-		desc: "每2秒自动收集1个像素",
+		name: "Auto cursor",
+		desc: "Automatically collects 1 pixel every 2 seconds",
 		cost: 1000,
 		persist: false,
 		prereq: 0,
@@ -20,8 +20,8 @@ function Upgrades() {
 	};
 	this.upgrades[2] = {
 		id: 2,
-		name: "自动光标速度",
-		desc: "光标可以更快地收集像素",
+		name: "Automatic cursor speed",
+		desc: "Cursor collects pixels faster",
 		cost: 2500,
 		costFunc: Pixel.AutoCursorSpeedCost,
 		tracker: function() { return Pixel.State.autoCursorSpeedLvl; },
@@ -31,8 +31,8 @@ function Upgrades() {
 	};
 	this.upgrades[4] = {
 		id: 4,
-		name: "光标大小",
-		desc: "手动一次收集更多像素",
+		name: "Cursor size",
+		desc: "Manually collect more pixels at once",
 		cost: 5000,
 		costFunc: Pixel.CursorSizeCost,
 		tracker: function() { return Pixel.State.cursorSizeLvl; },
@@ -42,8 +42,8 @@ function Upgrades() {
 	};
 	this.upgrades[5] = {
 		id: 5,
-		name: "基本图像信息",
-		desc: "显示最基本的图像信息",
+		name: "Basic image information",
+		desc: "Display the most basic image information",
 		cost: 2000,
 		persist: false,
 		prereq: 1,
@@ -51,8 +51,8 @@ function Upgrades() {
 	};
 	this.upgrades[6] = {
 		id: 6,
-		name: "高级图像信息",
-		desc: "显示更多图像信息",
+		name: "Advanced image information",
+		desc: "Show more image information",
 		cost: 8000,
 		persist: false,
 		prereq: 7,
@@ -60,8 +60,8 @@ function Upgrades() {
 	};
 	this.upgrades[7] = {
 		id: 7,
-		name: "基础统计",
-		desc: "显示一些基本统计信息",
+		name: "basic statistics",
+		desc: "Show some basic statistics",
 		cost: 4000,
 		persist: false,
 		prereq: 5,
@@ -69,8 +69,8 @@ function Upgrades() {
 	};
 	this.upgrades[8] = {
 		id: 8,
-		name: "高级统计",
-		desc: "显示更多统计信息",
+		name: "Advanced statistics",
+		desc: "Show more statistics",
 		cost: 12000,
 		persist: false,
 		prereq: 6,
@@ -78,8 +78,8 @@ function Upgrades() {
 	};
 	this.upgrades[9] = {
 		id: 9,
-		name: "获取新图像",
-		desc: "如果您不喜欢当前的图像，则可以获取新图像<br />每30秒可以进行一次",
+		name: "Get new image",
+		desc: "If you don't like the current image, you can get a new image<br />This can be done every 30 seconds",
 		cost: 10000,
 		persist: true,
 		tracker: false,
@@ -88,8 +88,8 @@ function Upgrades() {
 	};
 	this.upgrades[10] = {
 		id: 10,
-		name: "光标炸弹",
-		desc: "当您点击与光标大小成比例时，丢弃像素采集炸弹",
+		name: "cursor bomb",
+		desc: "When you click proportional to the cursor sizeï¼ŒDrop Pixel Harvester Bomb",
 		cost: 8000,
 		persist: false,
 		prereq: 1,
@@ -97,8 +97,8 @@ function Upgrades() {
 	};
 	this.upgrades[11] = {
 		id: 11,
-		name: "炸弹大小 I",
-		desc: "使光标炸弹更大",
+		name: "bomb size I",
+		desc: "Make cursor bomb bigger",
 		cost: 50000,
 		persist: false,
 		prereq: 10,
@@ -106,8 +106,8 @@ function Upgrades() {
 	};
 	this.upgrades[12] = {
 		id: 12,
-		name: "炸弹装弹速度",
-		desc: "使光标炸弹重新加载更快",
+		name: "Bomb reload speed",
+		desc: "Made cursor bomb reload faster",
 		cost: 10000,
 		costFunc: Pixel.CursorBombSpeedCost,
 		tracker: function() { return Pixel.State.cursorBombSpeedLvl; },
@@ -117,8 +117,8 @@ function Upgrades() {
 	};
 	this.upgrades[13] = {
 		id: 13,
-		name: "炸弹大小 II",
-		desc: "使光标炸弹更大",
+		name: "bomb size II",
+		desc: "Make cursor bomb bigger",
 		cost: 60000,
 		persist: false,
 		prereq: 11,
@@ -126,8 +126,8 @@ function Upgrades() {
 	};
 	this.upgrades[14] = {
 		id: 14,
-		name: "炸弹大小 III",
-		desc: "使光标炸弹更大",
+		name: "bomb size III",
+		desc: "Make cursor bomb bigger",
 		cost: 150000,
 		persist: false,
 		prereq: 13,
@@ -135,8 +135,8 @@ function Upgrades() {
 	};
 	this.upgrades[15] = {
 		id: 15,
-		name: "炸弹大小 IV",
-		desc: "使光标炸弹更大",
+		name: "bomb size IV",
+		desc: "Make cursor bomb bigger",
 		cost: 600000,
 		persist: false,
 		prereq: 14,
@@ -144,8 +144,8 @@ function Upgrades() {
 	};
 	this.upgrades[16] = {
 		id: 16,
-		name: "炸弹大小 V",
-		desc: "使光标炸弹更大",
+		name: "bomb size V",
+		desc: "Make cursor bomb bigger",
 		cost: 2500000,
 		persist: false,
 		prereq: 15,
@@ -153,8 +153,8 @@ function Upgrades() {
 	};
 	this.upgrades[17] = {
 		id: 17,
-		name: "炸弹链几率",
-		desc: "增加炸弹触发另一枚炸弹的机会",
+		name: "Bomb chain chance",
+		desc: "Increases the chance of a bomb triggering another bomb",
 		cost: 10000,
 		costFunc: Pixel.CursorBombChainCost,
 		tracker: function() { return Pixel.State.cursorBombChainLvl; },
@@ -164,8 +164,8 @@ function Upgrades() {
 	};
 	this.upgrades[18] = {
 		id: 18,
-		name: "自动完成图片",
-		desc: "解锁开关，让游戏一旦完成一个图像后，就自动开始下一个图像",
+		name: "Autocomplete pictures",
+		desc: "Unlock switchï¼ŒLet the game finish once an image isï¼Œautomatically start the next image",
 		cost: 75000,
 		persist: false,
 		prereq: 1,
@@ -173,8 +173,8 @@ function Upgrades() {
 	};
 	this.upgrades[19] = {
 		id: 19,
-		name: "炸弹最大链",
-		desc: "增加链中可触发的炸弹数量。 连续爆炸事件的回报逐渐减少。",
+		name: "bomb max chain",
+		desc: "Increased the number of triggerable bombs in the chain. The rewards for successive explosions gradually diminish.",
 		cost: 4000,
 		costFunc: Pixel.CursorBombMaxChainCost,
 		tracker: function() { return Pixel.State.cursorBombMaxChainLvl; },
@@ -184,8 +184,8 @@ function Upgrades() {
 	};
 	this.upgrades[20] = {
 		id: 20,
-		name: "像素颜色",
-		desc: "解锁一个允许您更改像素颜色的滑块",
+		name: "Pixel color",
+		desc: "Unlocks a slider that allows you to change pixel color",
 		cost: 50000,
 		persist: false,
 		prereq: 1,
@@ -193,8 +193,8 @@ function Upgrades() {
 	};
 	this.upgrades[21] = {
 		id: 21,
-		name: "像素分割",
-		desc: "拆分手动收集的像素，使它们翻倍后计入货币",
+		name: "Pixel segmentation",
+		desc: "Split manually collected pixelsï¼ŒDoubling them into currency",
 		cost: 50000,
 		persist: false,
 		prereq: 1,
@@ -202,8 +202,8 @@ function Upgrades() {
 	};
 	this.upgrades[22] = {
 		id: 22,
-		name: "像素分割",
-		desc: "进一步拆分手动获得的像素，现在它们获取的量是手动消除像素的四倍",
+		name: "Pixel segmentation",
+		desc: "Further splitting manually obtained pixelsï¼ŒThey now capture four times the amount of pixels manually eliminated",
 		cost: 150000,
 		persist: false,
 		prereq: 21,
@@ -211,8 +211,8 @@ function Upgrades() {
 	};
 	this.upgrades[23] = {
 		id: 23,
-		name: "自动像素分割",
-		desc: "拆分自动收集的像素，使它们翻倍后计入货币",
+		name: "Automatic pixel segmentation",
+		desc: "Split automatically collected pixelsï¼ŒDoubling them into currency",
 		cost: 50000,
 		persist: false,
 		prereq: 1,
@@ -220,8 +220,8 @@ function Upgrades() {
 	};
 	this.upgrades[24] = {
 		id: 24,
-		name: "自动像素分割",
-		desc: "进一步拆分自动获得的像素，现在它们获取的量是自动消除像素的四倍",
+		name: "Automatic pixel segmentation",
+		desc: "Further split automatically obtained pixelsï¼ŒNow they get four times the amount of automatically eliminated pixels",
 		cost: 150000,
 		persist: false,
 		prereq: 23,
@@ -229,8 +229,8 @@ function Upgrades() {
 	};
 	this.upgrades[25] = {
 		id: 25,
-		name: "炸弹像素分割",
-		desc: "拆分炸弹收集的像素，使它们翻倍后计入货币",
+		name: "bomb pixel segmentation",
+		desc: "Split bomb collected pixelsï¼ŒDoubling them into currency",
 		cost: 50000,
 		persist: false,
 		prereq: 10,
@@ -238,8 +238,8 @@ function Upgrades() {
 	};
 	this.upgrades[26] = {
 		id: 26,
-		name: "炸弹像素分割",
-		desc: "进一步拆分炸弹获得的像素，现在它们获取的量是炸弹消除像素的四倍",
+		name: "bomb pixel segmentation",
+		desc: "Pixels obtained by further splitting the bombï¼ŒThey now acquire four times the amount of bomb-busting pixels",
 		cost: 150000,
 		persist: false,
 		prereq: 25,
@@ -247,8 +247,8 @@ function Upgrades() {
 	};
 	this.upgrades[27] = {
 		id: 27,
-		name: "像素派对出现速度",
-		desc: "将像素派对出现的时间间隔减半",
+		name: "Pixel party appearance speed",
+		desc: "Halved the time between Pixel Party appearances",
 		cost: 250000,
 		persist: false,
 		prereq: 1,
@@ -256,8 +256,8 @@ function Upgrades() {
 	};
 	this.upgrades[28] = {
 		id: 28,
-		name: "像素派对奖励像素",
-		desc: "弹出派对像素时，会产生奖励像素",
+		name: "Pixel Party Bonus Pixels",
+		desc: "When party pixel pops upï¼ŒBonus pixels will be generated",
 		cost: 10000,
 		costFunc: Pixel.PartyPixelPopCost,
 		tracker: function() { return Pixel.State.partyPixelPopLvl; },
@@ -267,8 +267,8 @@ function Upgrades() {
 	};
     this.upgrades[29] = {
         id: 29,
-        name: "派对，像素派对",
-        desc: "像素派对的持续时间是原来的两倍",
+        name: "partyï¼ŒPixel Party",
+        desc: "Pixel parties last twice as long",
         cost: 1250000,
         persist: false,
         prereq: 27,
@@ -276,8 +276,8 @@ function Upgrades() {
     };
     this.upgrades[30] = {
         id: 30,
-        name: "NSFW 切换键",
-        desc: "可以切换能否看到NSFW(不适合工作时观看)的图片, 不只是能看到NSFW图片",
+        name: "NSFW toggle key",
+        desc: "You can switch whether you can see NSFW (not suitable for viewing at work) pictures, not just NSFW pictures.",
         cost: 1000000,
         persist: false,
         prereq: 31,
@@ -285,8 +285,8 @@ function Upgrades() {
     };
     this.upgrades[31] = {
         id: 31,
-        name: "检索过滤",
-        desc: "允许搜索特定关键词以及从reddit的子版中过滤后获取图片",
+        name: "Search filter",
+        desc: "Allows searching for specific keywords and filtering images from subreddits",
         cost: 250000,
         persist: false,
         prereq: 8,
