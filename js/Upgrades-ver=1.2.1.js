@@ -165,7 +165,7 @@ function Upgrades() {
 	this.upgrades[18] = {
 		id: 18,
 		name: "Autocomplete pictures",
-		desc: "Unlock switchï¼ŒLet the game finish once an image isï¼Œautomatically start the next image",
+		desc: "Unlock switch; Let the game finish once an image isï¼Œautomatically start the next image",
 		cost: 75000,
 		persist: false,
 		prereq: 1,
@@ -276,7 +276,7 @@ function Upgrades() {
     };
     this.upgrades[30] = {
         id: 30,
-        name: "NSFW toggle key",
+        name: "a toggle key",
         desc: "You can switch whether you can see NSFW (not suitable for viewing at work) pictures, not just NSFW pictures.",
         cost: 1000000,
         persist: false,
